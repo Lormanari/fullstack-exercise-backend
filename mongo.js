@@ -11,7 +11,7 @@ const url =
   `mongodb+srv://fullstack:${password}@cluster0.emxpr.mongodb.net/note-app?retryWrites=true&w=majority`
 
 mongoose
-.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
+  .connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
 // .then(res=>{
 // 	console.log("DB Connected!")
 // })
@@ -37,9 +37,9 @@ const note = new Note({
 //   console.log('note saved!')
 //   mongoose.connection.close()
 // })
-Note.find({important: true }).then(result => {
-	result.forEach(note => {
-	  console.log(note)
-	})
-	mongoose.connection.close()
+Note.find({}).then(result => {
+  result.forEach((note) => {
+    console.log(note)
+  })
+  mongoose.connection.close()
 })
